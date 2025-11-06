@@ -580,3 +580,53 @@ function favorite_card(id){
 }
 
 
+if (window.location.pathname === "/deck.html") {
+    const container = document.getElementById('deckcontainer'); // your grid container
+    let deck = JSON.parse(localStorage.getItem('deck')) || [];
+
+    function showDeckCards(deckCards = deck) {
+        container.innerHTML = ''; // clear container
+
+        deckCards.forEach(card => {
+            const cardContainer = document.createElement('div');
+
+            const cardElement = document.createElement('div');
+            cardElement.className = `market-card card-${card.faction}`;
+            cardElement.innerHTML = `
+                <div class="card-image" style="background-image: url('${card.image}');">
+                    <div class="rarity ${card.rarity}">${card.edition}</div>
+                </div>
+                <div class="px-4 py-2 bg-[#0E0E22]">
+                    <h3 class="text-2xl font-bold mb-2 text-${card.faction === "lightning" ? "purple" : card.faction === "fire" ? "orange" : "ciel"}">${card.name}</h3>
+                    <p class="text-xs text-gray-500 mb-2">${card.rarity}</p>
+                    <p class="text-xs text-gray-300 mb-6">${card.description}</p>
+                    <div class="flex justify-between text-gray-400">
+                        <div>
+                            <span>${card.price} 💎</span>
+                        </div>
+                        <div>
+                            <span>⚔️ ${card.attack}</span>
+                            <span>🛡️ ${card.defense}</span>
+                            <span>⚡ ${card.speed}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            cardContainer.appendChild(cardElement);
+            container.appendChild(cardContainer);
+        });
+    }
+
+    // Show all deck cards
+    showDeckCards(deck);
+}
+
+
+
+
+
+      
+
+
+
