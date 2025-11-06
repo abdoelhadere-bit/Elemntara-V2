@@ -394,34 +394,44 @@
         }
         add_cart(cards, 0)
     
+
+
       function filter_faction(x){
-        
-            if(x === 'all'){
-                    filter_cards = cards
-            }else{
-                filter_cards = cards.filter(function(card){
-                    return card.faction === x
-                })
-            }
+            // if(x === 'all'){
+            //         filter_cards = cards
+            // }else{
+            //     filter_cards = cards.filter(function(card){
+            //         return card.faction === x
+            //     })
+            // }
+
+            filter_cards = x === 'all' ? cards : cards.filter(card => card.faction === x)
             cuurent_index = 0
 
             add_cart(filter_cards, cuurent_index)
         }
 
-        
-        window.filter_faction = filter_faction;
+
+        function filter_rarity(x){
+            // if(x === 'all'){
+            //     filter_cards = filter_cards.filter(card => card.rarity === current)
+            // }
+            filter_cards = x === 'all' ? cards : cards.filter(card => card.rarity === x)
+            cuurent_index= 0
+            add_cart(filter_cards, 0)
+        }
+
+
+
+
+
+
+// window.filter_faction = filter_faction;
 // window.filter_rarity = filter_rarity;
 // window.add_cart = add_cart;
 // window.favorite_card = favorite_card;
 
-//         function filter_rarity(x){
-//             current = x;
-//             let filter_cards = cards;
-//             if(x !== 'all'){
-//                 filter_cards = filter_cards.filter(card => card.rarity === current)
-//             }
-//             add_cart(filter_cards)
-//         }
+        
 
 //         let cpt = 0;
 //         function update_cart(id){
