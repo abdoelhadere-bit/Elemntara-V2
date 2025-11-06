@@ -554,4 +554,14 @@ function removeFromCart(index) {
 }
 
 
-      
+  panieradder();
+
+        btn_cart.addEventListener('click', ()=>{
+
+        cartslider.classList.toggle('translate-x-full');
+        cartslider.classList.toggle('translate-x-0')
+
+    })
+
+
+
