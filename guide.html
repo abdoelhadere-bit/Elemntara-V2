@@ -10,10 +10,10 @@
     <title>Document</title>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
-    <header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16">
-        <nav class="container mx-auto px-6 py-4 sm:px-6 py-4">
+  <header class="fixed w-full top-0 z-30 bg-black/85 border-b h-16 flex justify-center items-center">
+        <nav class="container flex justify-between px-6 py-4 sm:px-6 py-4 justify-self-center ">
+            <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
                 <div class="hidden md:flex items-center space-x-8 text-sm sm:text-base">
                     <a href="guide.html" class="text-lg hover:text-cyan-600 transition-colors">Guide</a>
                     <a href="market.html" class="text-lg hover:text-cyan-600 transition-colors">Market</a>
@@ -21,10 +21,23 @@
                     <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors">Cart </a>
+                
             </div>
-        </nav>
+            <button class="hidden md:block bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors" id="cart">Cart </a>
+            </nav>
+            <span class="text-[30px] mx-[20px] menu-btn md:hidden block">☰</span>
     </header>
+     <div class="menu_slider fixed top-0 right-0 h-full w-[320px] bg-gray-900 text-white p-5 shadow-2xl translate-x-full  transition-transform duration-300 z-40 ">
+        <span class="fixed close-menu">X</span>
+        <div class="flex flex-col items-center justify-center h-full gap-10 ">
+            <a href="guide.html">Guide</a>
+            <a href="market.html">Market</a>
+            <a href="index.html" class="text-[40px]">Home</a>
+            <a href="deck.html">My Deck</a>
+            <a href="favorites.html">Favorite</a>
+            <button class="text-[20px] border-4 border-[#FF282C] p-[15px] rounded-[25px] justify-self-center flex bg-[#FF282C] cartpage">Cart</button>
+        </div>
+    </div>
 
     <section class="bg-[#171C37] relative overflow-hidden py-32">
         <div class="container mx-auto px-6 relative z-10">
@@ -186,55 +199,98 @@
         </div>
     </section>
 
-    <section class="py-20 bg-black">
+   <section class="py-20 bg-black">
         <div class="container mx-auto px-6">
             <h2 class="text-5xl font-black text-center mb-4 text-orange">RARITY SYSTEM</h2>
             <p class="text-center text-gray-400 text-lg mb-16">The rarer the card, the more powerful</p>
-
+            
             <div class="grid md:grid-cols-4 gap-6 max-w-6xl mx-auto">
-
-                <div class="bg-gray-700 border-2 border-yellow-500 rounded-xl p-6 text-center">
-                    <span class="badge legendary mb-4">LEGENDARY</span>
-                    <p class="text-4xl font-black text-yellow-400 mb-2">1/1</p>
-                    <p class="text-gray-300 text-sm mb-4">Unique in the word</p>
-                    <div class="box">
+                <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-yellow-500 rounded-xl p-6 text-center">
+                    <div class="rarity-badge legendary mb-4 rounded-full">Legendary</div>
+                    <div class="text-4xl font-black text-yellow-400 mb-2">1/1</div>
+                    <p class="text-gray-300 text-sm mb-4">Unique in the world</p>
+                    <div class="stat-box">
                         <p class="text-xs text-gray-400 mb-1">Average Power</p>
-                        <p class="text-2xl text-yellow-400 font-bold">95-100</p>
+                        <p class="text-2xl font-bold text-yellow-400">95-100</p>
                     </div>
                 </div>
-
-                <div class="bg-gray-700 border-2 border-yellow-500 rounded-xl p-6 text-center">
-                    <span class="badge legendary mb-4">LEGENDARY</span>
-                    <p class="text-4xl font-black text-yellow-400 mb-2">1/1</p>
-                    <p class="text-gray-300 text-sm mb-4">Unique in the word</p>
-                    <div class="box">
+                
+                <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-purple-500 rounded-xl p-6 text-center">
+                    <div class="rarity-badge epic mb-4 rounded-full">Epic</div>
+                    <div class="text-4xl font-black text-purple-400 mb-2">1/10</div>
+                    <p class="text-gray-300 text-sm mb-4">10 copies worldwide</p>
+                    <div class="stat-box">
                         <p class="text-xs text-gray-400 mb-1">Average Power</p>
-                        <p class="text-2xl text-yellow-400 font-bold">95-100</p>
+                        <p class="text-2xl font-bold text-purple-400">80-94</p>
                     </div>
                 </div>
-
-                <div class="bg-gray-700 border-2 border-yellow-500 rounded-xl p-6 text-center">
-                    <span class="badge legendary mb-4">LEGENDARY</span>
-                    <p class="text-4xl font-black text-yellow-400 mb-2">1/1</p>
-                    <p class="text-gray-300 text-sm mb-4">Unique in the word</p>
-                    <div class="box">
+                
+                <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-cyan-500 rounded-xl p-6 text-center">
+                    <div class="rarity-badge rare mb-4 rounded-full">Rare</div>
+                    <div class="text-4xl font-black text-cyan-400 mb-2">1/100</div>
+                    <p class="text-gray-300 text-sm mb-4">100 copies available</p>
+                    <div class="stat-box">
                         <p class="text-xs text-gray-400 mb-1">Average Power</p>
-                        <p class="text-2xl text-yellow-400 font-bold">95-100</p>
+                        <p class="text-2xl font-bold text-cyan-400">60-79</p>
                     </div>
                 </div>
-
-                <div class="bg-gray-700 border-2 border-yellow-500 rounded-xl p-6 text-center">
-                    <span class="badge legendary mb-4">LEGENDARY</span>
-                    <p class="text-4xl font-black text-yellow-400 mb-2">1/1</p>
-                    <p class="text-gray-300 text-sm mb-4">Unique in the word</p>
-                    <div class="box">
+                
+                <div class="bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-gray-500 rounded-xl p-6 text-center">
+                    <div class="rarity-badge common mb-4 rounded-full">Common</div>
+                    <div class="text-4xl font-black text-gray-400 mb-2">∞</div>
+                    <p class="text-gray-300 text-sm mb-4">Unlimited supply</p>
+                    <div class="stat-box">
                         <p class="text-xs text-gray-400 mb-1">Average Power</p>
-                        <p class="text-2xl text-yellow-400 font-bold">95-100</p>
+                        <p class="text-2xl font-bold text-gray-400">40-59</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+     <section class="py-20 bg-black">
+        <div class="container mx-auto px-6">
+            <h2 class="text-5xl font-black text-center mb-4 text-purple">FREQUENTLY ASKED QUESTIONS</h2>
+            <p class="text-center text-gray-400 text-lg mb-16">Everything you need to know</p>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(1)">
+                        <span>How do I get my first cards?</span>
+                        <span class="faq-icon" id="icon-1">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-1">
+                        <p class="text-gray-300">
+                            Every new player receives a free Starter Pack with 10 random cards (guaranteed at least 1 Rare). You can then purchase more cards from the Market or buy Card Packs. Complete daily quests to earn tokens and expand your collection!
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(2)">
+                        <span>How does the marketplace work?</span>
+                        <span class="faq-icon" id="icon-2">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-2">
+                        <p class="text-gray-300">
+                            The Market is a player-driven economy. You can buy cards from other players or list your own cards for sale. We take a 5% commission on each transaction. Rare cards can be traded, sold, or kept in your collection. All transactions are secure and instant.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(3)">
+                        <span>Can I sell my cards?</span>
+                        <span class="faq-icon" id="icon-3">▼</span>
+                    </div>
+                    <div class="faq-answer" id="answer-3">
+                        <p class="text-gray-300">
+                            Yes! You own your cards completely. Go to "My Deck", select any card, and click "Sell". Set your price and list it on the Market. Once another player buys it, you receive tokens instantly (minus 5% platform fee). The rarer the card, the higher you can price it!
+                        </p>
+                    </div>
+                </div>
+            </section>
 
     <footer class="bg-black border-t border-purple-900 py-12">
         <div class="container mx-auto px-6">
@@ -268,5 +324,43 @@
         </div>
         </div>
     </footer>
+
+
+<script>
+    function toggleFAQ(id) {
+    const answer = document.getElementById(`answer-${id}`);
+    const icon = document.getElementById(`icon-${id}`);
+
+    if (answer.style.display === "block") {
+        answer.style.display = "none";
+        icon.textContent = "▼";
+    } else {
+        answer.style.display = "block";
+        icon.textContent = "▲";
+    }
+}
+
+const btn_menu = document.querySelector('.menu-btn');
+const btn_menu_close = document.querySelector('.close-menu');
+const menuslider = document.querySelector('.menu_slider');
+const overlay = document.getElementById('overlay');
+
+function openMenu() {
+    menuslider.classList.remove('translate-x-full');
+    menuslider.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
+}
+
+function closeMenu() {
+    menuslider.classList.remove('translate-x-0');
+    menuslider.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+}
+
+btn_menu.addEventListener('click', openMenu);
+btn_menu_close.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+
+</script>
 </body>
 </html>

@@ -22,7 +22,7 @@
                     <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors">Cart </a>
+                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors" id="cart">Cart </a>
             </div>
         </nav>
     </header>
@@ -130,7 +130,28 @@
         </div>
         </div>
     </footer>
+<script>
+const btn_menu = document.querySelector('.menu-btn');
+const btn_menu_close = document.querySelector('.close-menu');
+const menuslider = document.querySelector('.menu_slider');
+const overlay = document.getElementById('overlay');
 
+function openMenu() {
+    menuslider.classList.remove('translate-x-full');
+    menuslider.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
+}
+
+function closeMenu() {
+    menuslider.classList.remove('translate-x-0');
+    menuslider.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+}
+
+btn_menu.addEventListener('click', openMenu);
+btn_menu_close.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
+</script>
     <script src="JS.js" defer></script>
 </body>
 </html>

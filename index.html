@@ -12,10 +12,10 @@
  
 </head>
 <body class="bg-black text-white overflow-x-hidden">
-    <header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16">
-        <nav class="container mx-auto px-6 py-4 sm:px-6 py-4">
+    <header class="fixed w-full top-0 z-30 bg-black/85 border-b h-16 flex justify-center items-center">
+        <nav class="container flex justify-between px-6 py-4 sm:px-6 py-4 justify-self-center ">
+            <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
                 <div class="hidden md:flex items-center space-x-8 text-sm sm:text-base">
                     <a href="guide.html" class="text-lg hover:text-cyan-600 transition-colors">Guide</a>
                     <a href="market.html" class="text-lg hover:text-cyan-600 transition-colors">Market</a>
@@ -23,10 +23,23 @@
                     <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors">Cart </a>
+                
             </div>
-        </nav>
+            <button class="hidden md:block bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors" id="cart">Cart </a>
+            </nav>
+            <span class="text-[30px] mx-[20px] menu-btn md:hidden block">☰</span>
     </header>
+     <div class="menu_slider fixed top-0 right-0 h-full w-[320px] bg-gray-900 text-white p-5 shadow-2xl translate-x-full  transition-transform duration-300 z-40 ">
+        <span class="fixed close-menu">X</span>
+        <div class="flex flex-col items-center justify-center h-full gap-10 ">
+            <a href="guide.html">Guide</a>
+            <a href="market.html">Market</a>
+            <a href="index.html" class="text-[40px]">Home</a>
+            <a href="deck.html">My Deck</a>
+            <a href="favorites.html">Favorite</a>
+            <button class="text-[20px] border-4 border-[#FF282C] p-[15px] rounded-[25px] justify-self-center flex bg-[#FF282C] cartpage">Cart</button>
+        </div>
+    </div>
     <main>
     <img src="images/logo.png" alt="Home Image" class="w-[90%] sm:w-[60%] lg:w-[45%] mx-auto ">
     <div class="container mx-auto px-6 h-full flex items-center justify-center z-10">
@@ -190,30 +203,29 @@ Unleash the flames of destruction. The fire titans embody brute force and devast
         </div>
     </footer>
 
- <script>
-const slides = document.querySelectorAll(".slide");
-const dots = document.querySelectorAll(".dot");
-let index = 0;
+<script>
+const btn_menu = document.querySelector('.menu-btn');
+const btn_menu_close = document.querySelector('.close-menu');
+const menuslider = document.querySelector('.menu_slider');
+const overlay = document.getElementById('overlay');
 
-function showSlide(i) {
-    slides.forEach((slide, idx) => {
-        slide.classList.toggle("active", idx === i);
-        dots[idx].classList.toggle("active", idx === i);
-    });
+function openMenu() {
+    menuslider.classList.remove('translate-x-full');
+    menuslider.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
 }
 
-dots.forEach((dot, i) => {
-    dot.addEventListener("click", () => {
-        index = i;
-        showSlide(index);
-    });
-});
+function closeMenu() {
+    menuslider.classList.remove('translate-x-0');
+    menuslider.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+}
 
-setInterval(() => {
-    index = (index + 1) % slides.length;
-    showSlide(index);
-}, 3000); 
+btn_menu.addEventListener('click', openMenu);
+btn_menu_close.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
 </script>
+
 
 </body>
 </html>
