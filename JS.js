@@ -564,4 +564,19 @@ function removeFromCart(index) {
     })
 
 
+let favorite_cards = JSON.parse(localStorage.getItem('favorite_card'))
+if (favorite_cards === null) {
+    favorite_cards = [];
+}
+function favorite_card(id){
+    const card = cards.find(c => c.id === id);
+    console.log(card)
+    if(!(favorite_cards.includes(card))){
+        favorite_cards.push(card);
+        console.log(favorite_cards);
+        localStorage.setItem('favorite_card', JSON.stringify(favorite_cards))
+    }
+    
+}
+
 
