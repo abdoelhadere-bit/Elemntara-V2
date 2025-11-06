@@ -623,6 +623,72 @@ if (window.location.pathname === "/deck.html") {
 }
 
 
+if (window.location.pathname === "/favorite.html"){
+     let favorite_cards = localStorage.getItem('favorite_card');
+        console.log(favorite_cards)
+        favorite_cards = JSON.parse(favorite_cards)
+        console.log(favorite_cards)
+       
+        
+        function display_favorite(arra){
+            const container = document.getElementById("cardcontainer_favorite")
+    container.innerHTML = '';
+            for(let i=0; i<arra.length; i++){
+             
+            const card_container = document.createElement('div');
+
+                const card_elemnt = document.createElement('div');
+                card_elemnt.className =`market-card card-${arra[i].faction}`;
+                card_elemnt.innerHTML = `
+                <div class="card-image" style="background-image: url('${arra[i].image}');";>
+                    <div class="rarity ${arra[i].rarity}">${arra[i].edition}</div>
+                </div>
+                <div class="px-4 py-2 bg-[#0E0E22]">
+                    <h3 class="text-2xl font-bold mb-2 text-${arra[i].faction === "lightning" ? "purple" : arra[i].faction ==="fire" ? "orange" : "ciel"}">${arra[i].name}</h3>
+                    <p class="text-xs text-gray-500 mb-2">${arra[i].rarity}</p>
+                    <p class="text-xs text-gray-300 mb-6">${arra[i].description}</p>
+                    <div class="flex justify-between text-gray-400">
+                        <div>
+                        <span >${arra[i].price} 💎</span>
+                        </div>
+                        <div>
+                        <span>⚔️ ${arra[i].attack}</span>
+                        <span>🛡️ ${arra[i].defense}</span>
+                        <span>⚡ ${arra[i].speed}</span>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                `
+                const card_button = document.createElement('div')
+                card_button.innerHTML = `<button class="btn-add-favorite mt-4 ml-2" onclick="favorite_card()">💔</button>`
+                card_container.appendChild(card_elemnt);
+                card_container.appendChild(card_button)
+                container.appendChild(card_container)
+                // container.innerHTML = card_elemnt 
+            
+        }
+        }
+        display_favorite(favorite_cards)
+
+
+        function filter_faction(x){
+
+            let filter_cards = favorite_cards;
+            filter_cards = x === 'all' ? favorite_cards : favorite_cards.filter(card => card.faction === x)
+            cuurent_index = 0
+
+            display_favorite(filter_cards)
+        }
+        function filter_rarity(x){
+            let filter_cards = favorite_cards;
+            filter_cards = x === 'all' ? favorite_cards : favorite_cards.filter(card => card.rarity === x)
+            cuurent_index = 0
+
+            display_favorite(filter_cards)
+}
+}
 
 
 
