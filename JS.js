@@ -533,4 +533,17 @@ checkoutBtn.addEventListener('click', () => {
     alert("Achat réussi ! Les cartes ont été ajoutées à votre deck ✅");
 });
 
-  
+function changeQuantity(index, delta) {
+    if (!cart[index]) return;
+    if (!cart[index].quantity) cart[index].quantity = 1;
+
+    cart[index].quantity += delta;
+
+    if (cart[index].quantity <= 0) {
+        cart.splice(index, 1);
+    }
+    localStorage.setItem('cart', JSON.stringify(cart));
+    
+    panieradder();
+}
+
