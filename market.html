@@ -22,10 +22,25 @@
                     <a href="mydeck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <a href="cart.html" class="bg-red-600 hover:bg-red-800 px-6 py-2 rounded-lg font-bold transition-colors" id="cart">Cart </a>
+                <button class="bg-red-600 hover:bg-red-800 px-6 py-2 rounded-lg font-bold transition-colors" id="cart" class="slider-btn">Cart </button>
             </div>
         </nav>
     </header>
+
+    <div id="cartslider" class="fixed top-[4rem] right-0 h-[82vh] w-[350px] bg-black/50 text-white p-5 rounded-xl shadow-2xl translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <div class="flex-1 mb-4 overflow-y-scroll cartscrollbar">
+            <h2 class="mb-4 text-xl font-bold text-center">Cart</h2>
+            <div id="panier" class="flex-1 mb-4"></div>
+        </div>
+        <div id="totalContainer" class="pt-4 border-t border-gray-700">
+        <div class="flex justify-between mb-3 text-lg font-semibold">
+            <span>Total</span>
+            <span id="totalPrice" class="text-cyan-400">0 💎</span>
+        </div>
+        <button id="checkoutBtn" class="w-full py-2 mb-2 btn-primary relative px-10 py-4 bg-[linear-gradient(to_right,_#8430E2_0%,_#664BE2_50%,_#5658E2_75%,_#4765E2_100%)] rounded-full transition duration-300 ease-in-out transform hover:scale-105">Acheter</button>
+        <button class="w-full py-2 bg-red-500 btn-primary relative px-10 py-4 bg-red-500 rounded-full transition duration-300 ease-in-out transform hover:scale-105">Close</button>
+        </div>
+    </div>
 
     <section class="bg-black pt-32 pb-12 relative">
         <div class="container mx-auto px-6 relative z-10">
