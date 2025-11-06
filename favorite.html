@@ -12,18 +12,18 @@
     <title>Document</title>
 </head>
 <body class="bg-black text-white overflow-x-hidden">
-    <header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16 text-white">
-        <nav class="container mx-auto px-6 py-4">
+<header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16">
+        <nav class="container mx-auto px-6 py-4 sm:px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-[8vw] h-[3vw]" alt=""></a>
-                <div class="flex items-center space-x-8">
+                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
+                <div class="hidden md:flex items-center space-x-8 text-sm sm:text-base">
                     <a href="guide.html" class="text-lg hover:text-cyan-600 transition-colors">Guide</a>
                     <a href="market.html" class="text-lg hover:text-cyan-600 transition-colors">Market</a>
                     <a href="#" class="text-lg hover:text-purple-600 transition-colors">PLAY</a>
                     <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <button class="bg-red-600 hover:bg-red-800 px-6 py-2 rounded-lg font-bold transition-colors" id="cart">Cart </button>
+                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors">Cart </a>
             </div>
         </nav>
     </header>
@@ -47,8 +47,8 @@
     <section class="bg-black pt-32 pb-12 relative">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-8">
-                <h1 class="epic-title mb-4">MY FAVORITES</h1>
-                <p class="text-xl text-gray-300">Your wishlist of legendary cards</p>
+                <h1 class="my-6 text-3xl sm:text-6xl lg:text-8xl epic-title">MY FAVORITE</h1>
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">Your wishlist of legendary cards</p>
             </div>
         </div>
     </section>
@@ -57,7 +57,7 @@
         <div class="container mx-auto px-6">
             <div class="flex flex-wrap gap-4 justify-center items-center">
 
-                <div class="flex gap-4">
+                <div class="flex flex-wrap gap-4 justify-center">
                     <button class="filter border-purple-500 text-purple-400 active" onclick="filter_faction('all')">All Factions</button>
                     <button class="filter border-purple-500 text-purple-400" onclick="filter_faction('lightning')">⚡ Lightning</button>
                     <button class="filter border-orange-500 text-orange-400" onclick="filter_faction('fire')">🔥 Fire</button>
@@ -93,7 +93,7 @@
 
     <footer class="bg-black border-t border-purple-900 py-12">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <div>
                 <h4 class="text-xl font-bold mb-4 text-purple">ELEMNTARA</h4>
                 <p class="text-gray-400">Three forces, one destiny</p>
@@ -123,6 +123,7 @@
         </div>
         </div>
     </footer>
+
     <script src="JS.js"></script>
     <!-- <script>
         let favorite_cards = localStorage.getItem('favorite_card');

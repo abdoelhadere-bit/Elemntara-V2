@@ -11,28 +11,28 @@
 </head>
 <body class="bg-black text-white overflow-x-hidden">
     <header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16">
-        <nav class="container mx-auto px-6 py-4">
+        <nav class="container mx-auto px-6 py-4 sm:px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-[8vw] h-[3vw]" alt=""></a>
-                <div class="flex items-center space-x-8">
+                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
+                <div class="hidden md:flex items-center space-x-8 text-sm sm:text-base">
                     <a href="guide.html" class="text-lg hover:text-cyan-600 transition-colors">Guide</a>
                     <a href="market.html" class="text-lg hover:text-cyan-600 transition-colors">Market</a>
                     <a href="#" class="text-lg hover:text-purple-600 transition-colors">PLAY</a>
                     <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <a href="cart.html" class="bg-red-600 hover:bg-red-800 px-6 py-2 rounded-lg font-bold transition-colors">Cart </a>
+                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors">Cart </a>
             </div>
         </nav>
     </header>
 
-    <section class="relative overflow-hidden py-32">
+    <section class="bg-[#171C37] relative overflow-hidden py-32">
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-16">
-                <h1 class="epic-title mb-6">
+                <h1 class="my-6 text-3xl sm:text-6xl lg:text-8xl epic-title ">
                     The Guide
                 </h1>
-                <p class="text-xl md:text-2xl text-gray-400 max-x-3xl mx-auto">
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">
                     Master the elements, understand the game, and become a legendary summoner
                 </p>
             </div>
@@ -41,7 +41,7 @@
 
     <section class="py-20 bg-black relative">
         <div class="container mx-auto px-6">
-            <h2 class="text-5xl font-black text-center mb-4 text-purple">THE UNIVERSE OF ELEMENTARA</h2>
+            <h2 class="text-4xl sm:text-6xl text-center font-black mb-3 text-purple">THE UNIVERSE OF ELEMENTARA</h2>
             <p class="text-center text-gray-400 text-lg mb-12">The legend begins</p>
 
             <div class="max-w-4xl mx-auto">
@@ -64,7 +64,7 @@
             <h2 class="text-5xl font-black text-center mb-4 text-ciel">THE THREE FACTIONS</h2>
             <p class="text-center text-gray-400 text-lg mb-16">Choose your element, master your destiny</p>
 
-            <div class="grid grid-cols-3 gap-8 mb-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                 
                 <div class="card card-lightning p-8">
                     <div class="text-center mb-6">
@@ -235,5 +235,38 @@
             </div>
         </div>
     </section>
+
+    <footer class="bg-black border-t border-purple-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <div>
+                <h4 class="text-xl font-bold mb-4 text-purple">ELEMNTARA</h4>
+                <p class="text-gray-400">Three forces, one destiny</p>
+                </div>
+            <div> 
+                <h5 class="font-bold mb-4 text-cyan-400">Navigation</h5>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="guide.html" class="hover:text-cyan-600 transition-colors">Guide</a></li>
+                    <li><a href="market.html" class="hover:text-cyan-600 transition-colors">Market</a></li>
+                    <li><a href="mydeck.html" class="hover:text-cyan-600 transition-colors">My Deck</a></li>
+                </ul>
+            </div>
+             <div> 
+                <h5 class="font-bold mb-4 text-cyan-400">Support</h5>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">FAQ</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div> 
+                <h5 class="font-bold mb-4 text-cyan-400">Legal</h5>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">CGU</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">Confidentiality</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </footer>
 </body>
 </html>

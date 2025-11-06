@@ -489,7 +489,7 @@ function panieradder() {
             <div class="flex flex-col bg-[#0E0E22] rounded-lg mb-4 p-3">
                 <div class="flex justify-between items-center">
                     <div class="flex items-center gap-3">
-                        <img src="${cart[i].image}" alt="${cart[i].name}" class="w-16 h-24 rounded-md object-cover border border-gray-700">
+                        <img src="${cart[i].image}" alt="${cart[i].name}" class="w-30 h-24 rounded-md object-cover border border-gray-700">
                         <div>
                             <h3 class="font-bold text-sm">${cart[i].name}</h3>
                             <p class="text-gray-400 text-xs">${total_card.toFixed(2)} 💎</p>
@@ -530,7 +530,7 @@ checkoutBtn.addEventListener('click', () => {
 
     panieradder();
 
-    alert("Achat réussi ! Les cartes ont été ajoutées à votre deck ✅");
+    alert("Purchase successful! The cards have been added to your deck ✅");
 });
 
 function changeQuantity(index, delta) {
@@ -662,7 +662,7 @@ if (window.location.pathname === "/favorite.html"){
                 </div>
                 `
                 const card_button = document.createElement('div')
-                card_button.innerHTML = `<button class="btn-add-favorite mt-4 ml-2" onclick="favorite_card()">💔</button>`
+                card_button.innerHTML = `<button class="btn-add-favorite mt-4 ml-2" onclick="remove_favorite(${arra[i].id})">💔</button>`
                 card_container.appendChild(card_elemnt);
                 card_container.appendChild(card_button)
                 container.appendChild(card_container)
@@ -671,7 +671,17 @@ if (window.location.pathname === "/favorite.html"){
         }
         }
         display_favorite(favorite_cards)
+        function remove_favorite(id){
+            favorite_cards = favorite_cards.filter(card => card.id !== id);
 
+            if(favorite_cards.length === 0){
+                localStorage.removeItem("favorite_card");
+            } else {
+                localStorage.setItem("favorite_card", JSON.stringify(favorite_cards));
+            }
+        
+            display_favorite(favorite_cards);
+}
 
         function filter_faction(x){
 

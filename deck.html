@@ -11,21 +11,59 @@
     <title>Document</title>
 </head>
 <body>
-    <header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16 text-white">
-        <nav class="container mx-auto px-6 py-4">
+<header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16">
+        <nav class="container mx-auto px-6 py-4 sm:px-6 py-4 text-white">
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-[8vw] h-[3vw]" alt=""></a>
-                <div class="flex items-center space-x-8">
+                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
+                <div class="hidden md:flex items-center space-x-8 text-sm sm:text-base">
                     <a href="guide.html" class="text-lg hover:text-cyan-600 transition-colors">Guide</a>
                     <a href="market.html" class="text-lg hover:text-cyan-600 transition-colors">Market</a>
                     <a href="#" class="text-lg hover:text-purple-600 transition-colors">PLAY</a>
                     <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <button class="bg-red-600 hover:bg-red-800 px-6 py-2 rounded-lg font-bold transition-colors" id="cart" class="slider-btn">Cart </button>
+                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors">Cart </a>
             </div>
         </nav>
     </header>
+        <section class="bg-black pt-32 pb-12 relative">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-8">
+                <h1 class="my-6 text-3xl sm:text-6xl lg:text-8xl epic-title">My Deck</h1>
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl mx-auto mb-8">Discover, collect, and trade legendary cards</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-black py-8 sticky top-20 z-40 border-b border-purple-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap gap-4 justify-center items-center">
+
+                <div class="flex flex-wrap gap-4 justify-center">
+                    <button class="filter border-purple-500 text-purple-400 active" onclick="filter_faction('all')">All Factions</button>
+                    <button class="filter border-purple-500 text-purple-400" onclick="filter_faction('lightning')">⚡ Lightning</button>
+                    <button class="filter border-orange-500 text-orange-400" onclick="filter_faction('fire')">🔥 Fire</button>
+                    <button class="filter border-cyan-500 text-cyan-400" onclick="filter_faction('ice')">❄️ Ice</button>
+                </div>
+                
+
+                <select class="filter border-cyan-500 text-cyan-400 bg-black" onchange="filter_rarity(this.value)">
+                    <option value="all">All Rarities</option>
+                    <option value="legendary">Legendary</option>
+                    <option value="epic">Epic</option>
+                    <option value="rare">Rare</option>
+                    <option value="common">Common</option>
+                </select>
+                
+                <select class="filter border-purple-500 text-purple-400 bg-black">
+                    <option value="default">Sort By</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="rarity">Rarity</option>
+                </select>
+            </div>
+        </div>
+    </section>
 
     <div id="cartslider" class="fixed top-[4rem] right-0 h-[82vh] w-[350px] bg-black/50 text-white p-5 rounded-xl shadow-2xl translate-x-full transition-transform duration-300 z-50 flex flex-col">
         <div id="sliderpanier" class="flex-1 mb-4 overflow-y-scroll ">
@@ -50,7 +88,7 @@
     </section>
     <footer class="bg-black border-t border-purple-900 py-12">
         <div class="container mx-auto px-6">
-            <div class="grid grid-cols-4 gap-8 mb-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
                 <div>
                 <h4 class="text-xl font-bold mb-4 text-purple">ELEMNTARA</h4>
                 <p class="text-gray-400">Three forces, one destiny</p>
