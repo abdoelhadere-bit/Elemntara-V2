@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16 text-white">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-[8vw] h-[3vw]" alt=""></a>
+                <div class="flex items-center space-x-8">
+                    <a href="guide.html" class="text-lg hover:text-cyan-600 transition-colors">Guide</a>
+                    <a href="market.html" class="text-lg hover:text-cyan-600 transition-colors">Market</a>
+                    <a href="#" class="text-lg hover:text-purple-600 transition-colors">PLAY</a>
+                    <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
+                    <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
+                </div>
+                <button class="bg-red-600 hover:bg-red-800 px-6 py-2 rounded-lg font-bold transition-colors" id="cart" class="slider-btn">Cart </button>
+            </div>
+        </nav>
+    </header>
+
+    <div id="cartslider" class="fixed top-[4rem] right-0 h-[82vh] w-[350px] bg-black/50 text-white p-5 rounded-xl shadow-2xl translate-x-full transition-transform duration-300 z-50 flex flex-col">
+        <div id="sliderpanier" class="flex-1 mb-4 overflow-y-scroll ">
+            <h2 class="mb-4 text-xl font-bold text-center">Cart</h2>
+            <div id="panier" class="flex-1 mb-4"></div>
+        </div>
+        <div id="totalContainer" class="pt-4 border-t border-gray-700">
+        <div class="flex justify-between mb-3 text-lg font-semibold">
+            <span>Total</span>
+            <span id="totalPrice" class="text-cyan-400">0 💎</span>
+        </div>
+        <button id="checkoutBtn" class="w-full py-2 mb-2 btn-primary relative px-10 py-4 bg-[linear-gradient(to_right,_#8430E2_0%,_#664BE2_50%,_#5658E2_75%,_#4765E2_100%)] rounded-full transition duration-300 ease-in-out transform hover:scale-105">Acheter</button>
+        <button class="w-full py-2 bg-red-500 btn-primary relative px-10 py-4 bg-red-500 rounded-full transition duration-300 ease-in-out transform hover:scale-105">Close</button>
+        </div>
+    </div>
+    <section class="bg-[#171C37] py-16 relative">
+        <div class="container mx-auto px-6 relative">
+            <div id="deckcontainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"></div>
+
+            </div>
+        </div>
+    </section>
+    <footer class="bg-black border-t border-purple-900 py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-4 gap-8 mb-8">
+                <div>
+                <h4 class="text-xl font-bold mb-4 text-purple">ELEMNTARA</h4>
+                <p class="text-gray-400">Three forces, one destiny</p>
+                </div>
+            <div> 
+                <h5 class="font-bold mb-4 text-cyan-400">Navigation</h5>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="guide.html" class="hover:text-cyan-600 transition-colors">Guide</a></li>
+                    <li><a href="market.html" class="hover:text-cyan-600 transition-colors">Market</a></li>
+                    <li><a href="mydeck.html" class="hover:text-cyan-600 transition-colors">My Deck</a></li>
+                </ul>
+            </div>
+             <div> 
+                <h5 class="font-bold mb-4 text-cyan-400">Support</h5>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">FAQ</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">Contact</a></li>
+                </ul>
+            </div>
+            <div> 
+                <h5 class="font-bold mb-4 text-cyan-400">Legal</h5>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">CGU</a></li>
+                    <li><a href="#" class="hover:text-cyan-600 transition-colors">Confidentiality</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </footer>
+    <script src="JS.js" defer></script>
+</body>
+</html>
