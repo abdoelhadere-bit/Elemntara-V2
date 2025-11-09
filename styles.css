@@ -403,3 +403,7 @@
         }
 
        
+
+#deck_side::-webkit-scrollbar{
+            display: none;
+}
