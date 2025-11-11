@@ -1,11 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
     <title>Document</title>
 </head>
-<body>
-    
+
+<body class="bg-black text-white box-border">
+    <div id="popup" class=" fixed inset-0 z-10 hidden flex-col items-center justify-center p-4">
+        <div class=" bg-cyan-700/30 shadow-xl rounded-xl">
+            <h2 class="text-white/80 font-bold text 2xl text-center my-2">Choose mode:</h2>
+            <div class="container mx-auto flex gap-8 p-4">
+                <button id="attack" class="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-500 hover:to-red-600 rounded-lg font-bold transition transform hover:scale-105 flex items-center gap-2 shadow-lg p-2">⚔️ Attack</button>
+                <button id="defense" class="bg-green-600 rounded-lg p-2">🛡️ Defence</button>
+            </div>
+        </div>
+        
+    </div>
+    <header class="flex justify-between items-center p-3">
+        <div class="flex items-center gap-8">
+            <a href="index.html"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
+            <button
+                class="btn-primary text-sm h-8 relative px-10 bg-[linear-gradient(to_right,_#8430E2_0%,_#664BE2_50%,_#5658E2_75%,_#4765E2_100%)] rounded-full transition duration-300 ease-in-out transform hover:scale-105">YOUR
+                TURN</button>
+            <p>Turn: <span class="text-cyan-600"></span></p>
+        </div>
+        <div class="flex gap-8">
+            <div class="flex items-center gap-6 text-orange-400">
+                <p>OPP</p>
+                <span class="w-40 h-4 border-2 border-orange-500 rounded-full "></span>
+                <p>2008</p>
+            </div>
+            <div class="flex items-center gap-6 text-cyan-400">
+                <p>OPP</p>
+                <span class="w-40 h-4 border-2 border-cyan-500 rounded-full"></span>
+                <p>2008</p>
+            </div>
+        </div>
+        <button
+            class="btn-primary px-4 py-2 h-10 bg-red-600 rounded-lg transition duration-300 ease-in-out transform hover:scale-105">END
+            TURN</button>
+    </header>
+
+    <main class="flex h-[90]">
+        <aside class="bg-[#171C37]/60 border-r-2 border-purple-900 w-60 h-[90vh] overflow-auto" id="deck_side">
+            <section id="deck-cards" class="flex flex-col justify-center gap-4 p-1">
+                <button id="drawCard" class="mt-4 btn-primary text-[16px] h-10 relative bg-[linear-gradient(to_right,_#8430E2_0%,_#664BE2_50%,_#5658E2_75%,_#4765E2_100%)] rounded-full transition duration-300 ease-in-out transform hover:scale-105">Draw Card</button>
+                <h2 class="text-center text-purple-400 font-bold py-2">My Deck <span id="deck_cpt">6</span></h2>
+
+            </section>
+        </aside>
+        <section class="flex-1 py-5 px-16 flex flex-col gap-3">
+        <!--  -->
+            <div class="flex gap-4 bg-[#171C37]/60 border-2 border-cyan-500 rounded-lg h-[22vh] p-4">
+                <div class="h-full flex-1 bg-[#171C37]/90 border-2 border-gray-500 rounded-xl relative"></div>
+                <div class="h-full flex-1 bg-[#171C37]/90 border-2 border-gray-500 rounded-xl relative"></div>
+                <div class="h-full flex-1 bg-[#171C37]/90 border-2 border-gray-500 rounded-xl relative"></div>
+                <div class="h-full flex-1 bg-[#171C37]/90 border-2 border-gray-500 rounded-xl relative"></div>
+                <div class="h-full flex-1 bg-[#171C37]/90 border-2 border-gray-500 rounded-xl relative"></div>
+            </div>
+            <div class="border-2 border-orange-700 bg-orange-700/10 flex-1 grid grid-cols-5 grid-rows-2 gap-4 rounded-lg p-4 h-[46vh]">
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+                <div class="bg-[#171C37]/90 border-2 border-gray-500 rounded-xl"></div>
+            </div>
+            <!--  -->
+                <h3 class="text-center font-bold text-xs mb-2 text-orange">OPPONENT ZONE</h3>
+
+            <div class="bg-gradient-to-br from-red-700/30 to-transparent border border-orange-800 rounded-xl py-3 px-8 mx-16 flex-1">
+                <div class="h-full flex flex-col gap-2">
+
+                    <div class="flex-1 grid grid-cols-5 gap-2">
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                    </div>
+                    <!--  -->
+                    <div class="flex-1 grid grid-cols-4 gap-2">
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all"></div>
+                    </div>
+                    <!--  -->
+                </div>
+           </div>
+
+            <div class="bg-gradient-to-tl from-cyan-700/30 to-transparent border border-cyan-800 rounded-xl p-3 flex-1 py-3 px-8 mx-16">
+                <div class="h-full flex flex-col gap-2">
+
+                    <div class="flex-1 grid grid-cols-5 gap-2">
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all" ondragover="dragoverHandler(event)" ></div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all" ondragover="dragoverHandler(event)"  > </div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all" ondragover="dragoverHandler(event)"  > </div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all" ondragover="dragoverHandler(event)"  > </div>
+                        <div class="border-2 border-dashed border-gray-600 bg-black/50 rounded-lg relative transition-all" ondragover="dragoverHandler(event)"  > </div>
+                    </div>
+            
+                    </div> 
+                </div>
+
+           </div>
+            <h3 class="text-center font-bold text-xs text-ciel">My ZONE</h3>
+
+           
+            <div id="My_Hand" class="flex gap-4 justify-center bg-[#171C37]/60 border-2 border-cyan-500 rounded-lg h-[22vh] p-4">
+         
+            </div>
+        </section>
+    </main>
 </body>
+
 </html>
