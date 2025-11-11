@@ -122,6 +122,40 @@ function displayDeck(deck){
                 </div>
                 `;
         container.appendChild(elmnt)
+        elmnt.addEventListener('click', ()=>{
+            const hand = document.getElementById('My_Hand')
+             let current_cards = hand.children.length
+             console.log(current_cards)
+            
+            if(current_cards<5){
+            
+            // hand.innerHTML=""
+                const elment = document.createElement('div')
+               
+                elment.className = `h-full w-32 bg-gray-900 border-2 rounded-lg cursor-pointer p-2 transiton`
+                elment.innerHTML = `
+                <img src="${card.image}" class="w-full h-20 object-fit rounded mb-1">
+                <p class="text-[9px] font-bold text-center">${card.name}</p>
+                <div class="flex justify-around text-[10px] text-gray-400 mt-1">
+                    <span>⚔️${card.attack}</span>
+                    <span>🛡️${card.defense}</span>
+                </div>
+                `
+                card.quantity -= 1
+                
+                hand.appendChild(elment)
+                displayDeck(deck)
+                if(card.quantity<=1){
+                // alert(`You have no more ${card.name} left in your deck`)
+                deck = deck.filter(f => f.id !== card.id)
+                displayDeck(deck)
+                return
+            }
+            }else{
+                alert('Five Cart Max')
+            }
+            
+        })
 })
 }
     </script>
