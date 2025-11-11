@@ -99,6 +99,32 @@
             </div>
         </section>
     </main>
+
+    <script>
+         const decks = JSON.parse(localStorage.getItem('deck'))
+
+    const playCards = [...decks];
+
+
+function displayDeck(deck){
+    const container = document.getElementById('deck-cards')
+    container.innerHTML = ""
+    
+    deck.forEach(card => {
+        const elmnt = document.createElement('div')
+        elmnt.className = `bg-gray-800 border-2 card-${card.faction} rounded-lg p-2 cursor-pointer transition`
+        elmnt.innerHTML = `
+                <img src="${card.image}" class="w-full h-21 object-cover rounded mb-1">
+                <p class="text-[9px] font-bold text-center">${card.name}</p>
+                <div class="flex justify-around text-[10px] text-gray-400 mt-1">
+                    <span>⚔️${card.attack}</span>
+                    <span>🛡️${card.defense}</span>
+                </div>
+                `;
+        container.appendChild(elmnt)
+})
+}
+    </script>
 </body>
 
 </html>
