@@ -344,7 +344,15 @@
         }
 
         
-    
+        const endTurnBtn = document.querySelector('#endTurn');
+        endTurnBtn.addEventListener('click', () => {
+            if(turn=='defence'){
+                placeOpponentCard();
+                turn='player'
+                play=1
+            }
+
+        });
 
         displayDeck(playCards);
 
