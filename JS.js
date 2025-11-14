@@ -231,17 +231,17 @@ let deck = JSON.parse(localStorage.getItem('deck')) || [];
 
 function displayCards(list){
     if (window.location.pathname.includes("/market.html")) add_cart(list, 0);
-    if (window.location.pathname === "/deck.html") {
+    if (window.location.pathname.includes("/deck.html")) {
     showDeckCards(list);
     }
-    if (window.location.pathname === "/favorite.html") display_favorite(list);
+    if (window.location.pathname.includes("/favorite.html")) display_favorite(list);
 
 }
-if(window.location.pathname === "/deck.html") {
+if(window.location.pathname.includes("/deck.html")) {
     displayCards(deck); 
 }else if (window.location.pathname.includes("/market.html")) {
     displayCards(cards); 
-}else if (window.location.pathname === "/favorite.html") {
+}else if (window.location.pathname.includes("/favorite.html")) {
     displayCards(favorite_cards);
 }
 
