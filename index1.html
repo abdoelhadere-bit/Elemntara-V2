@@ -11,11 +11,11 @@
     <title>Document</title>
  
 </head>
-<body class="bg-black text-white overflow-x-hidden sca">
-<header class="fixed w-full top-0 z-50 bg-black/85 border-b h-16">
-        <nav class="container mx-auto px-6 py-4 sm:px-6 py-4 text-white">
+<body class="bg-black text-white overflow-x-hidden">
+    <header class="fixed w-full top-0 z-30 bg-black/85 border-b h-16 flex justify-center items-center">
+        <nav class="container flex justify-between px-6 py-4 sm:px-6 py-4 justify-self-center ">
+            <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
             <div class="flex items-center justify-between">
-                <a href="index.html" class="text-2xl font-bold  text-ciel"> <img src="images/elementara.png" class=" w-28 sm:w-32" alt=""></a>
                 <div class="hidden md:flex items-center space-x-8 text-sm sm:text-base">
                     <a href="guide.html" class="text-lg hover:text-cyan-600 transition-colors">Guide</a>
                     <a href="market.html" class="text-lg hover:text-cyan-600 transition-colors">Market</a>
@@ -23,23 +23,30 @@
                     <a href="deck.html" class="text-lg hover:text-cyan-600 transition-colors">My Deck</a>
                     <a href="favorite.html" class="text-lg hover:text-cyan-600 transition-colors">Favorite</a>
                 </div>
-                <button class="bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors" id="cart">Cart </button>
-                <span class="menu-btn text-[30px] mx-[20px] cursor-pointer md:hidden block">☰</span>
-
+                
             </div>
-        </nav>
+            <button class="hidden md:block bg-red-600 hover:bg-red-800 px-4 sm: px-6 py-2 text-sm rounded-lg font-bold transition-colors" id="cart">Cart </a>
+            </nav>
+            <span class="text-[30px] mx-[20px] menu-btn md:hidden block">☰</span>
     </header>
-    <div class="menu_slider fixed top-16 right-0 h-auto w-[320px] bg-black/90 text-white p-2 shadow-2xl translate-x-full transition-transform duration-300 z-40 border-2 border-cyan-300/50 rounded-xl">
-        <div class="flex flex-col items-center justify-start py-14 h-full gap-10 ">
-            <a href="guide.html" class="hover:text-cyan-500 hover:scale-110 transition-all">Guide</a>
-            <a href="market.html" class="hover:text-cyan-500 hover:scale-110 transition-all">Market</a>
-            <a href="play.html" class="text-[40px] text-purple-700 hover:text-purple-500 hover:scale-105 transition-all">PLAY</a>
-            <a href="deck.html" class="hover:text-cyan-500 hover:scale-110 transition-all">My Deck</a>
-            <a href="favorites.html" class="hover:text-cyan-500 hover:scale-110 transition-all">Favorite</a>
+     <div class="menu_slider fixed top-0 right-0 h-full w-[320px] bg-gray-900 text-white p-5 shadow-2xl translate-x-full  transition-transform duration-300 z-40 ">
+        <span class="fixed close-menu">X</span>
+        <div class="flex flex-col items-center justify-center h-full gap-10 ">
+            <a href="guide.html">Guide</a>
+            <a href="market.html">Market</a>
+            <a href="index.html" class="text-[40px]">Home</a>
+            <a href="deck.html">My Deck</a>
+            <a href="favorites.html">Favorite</a>
+            <button class="text-[20px] border-4 border-[#FF282C] p-[15px] rounded-[25px] justify-self-center flex bg-[#FF282C] cartpage">Cart</button>
         </div>
     </div>
     <main>
-    <img src="images/logo.png" alt="Home Image" class="w-[90%] sm:w-[60%] lg:w-[45%] mx-auto ">
+    <!-- <img src="images/logo.png" alt="Home Image" class="w-[90%] sm:w-[60%] lg:w-[45%] mx-auto "> -->
+     <div class="card_show">
+        <div id="show_container w-[360px] h-[470px]">
+
+        </div>
+     </div>
     <div class="container mx-auto px-6 h-full flex items-center justify-center z-10">
         <div class="text-center">
         <h1 class="epic-title my-6 text-3xl sm:text-4xl lg:text-6xl">ENTER THE LEGEND</h1>
@@ -200,31 +207,70 @@ Unleash the flames of destruction. The fire titans embody brute force and devast
         </div>
         </div>
     </footer>
-
-<script src="JS.js"></script>
-
+<!-- <script src="JS.js"></script> -->
 <script>
-    const slides = document.querySelectorAll('.slide')
-    const dots = document.querySelectorAll('.dot')
-    let currentSlide = 0
+    const cards = [
+    { id: 1, name: "Voltarax", faction: "lightning", type: "creature", rarity: "legendary", edition: "1/1", attack: 10, defense: 8, speed: 9, price: 10000, image: "/images/4.png", description: "The ancient guardian of storms, master of thunder and lightning" },
+    { id: 2, name: "Ignothar", faction: "fire", type: "creature", rarity: "legendary", edition: "1/1", attack: 12, defense: 7, speed: 6, price: 12000, image: "/images/fire1.png", description: "The incandescent titan, embodiment of rage and destruction" },
+    { id: 3, name: "Glacior", faction: "ice", type: "creature", rarity: "legendary", edition: "1/1", attack: 8, defense: 12, speed: 7, price: 11000, image: "/images/ice1.png", description: "The eternal paladin, guardian of frozen eternity" },
+    { id: 4, name: "Storm Assassin", faction: "lightning", type: "creature", rarity: "epic", edition: "1/10", attack: 7, defense: 4, speed: 10, price: 2500, image: "images/light1.jpg", description: "Silent as shadow, fast as lightning" },
+    { id: 5, name: "Lava Colossus", faction: "fire", type: "creature", rarity: "epic", edition: "1/10", attack: 9, defense: 6, speed: 4, price: 2800, image: "images/fire2.png", description: "Walking volcano of pure destruction" },
+    { id: 6, name: "Crystalline", faction: "ice", type: "creature", rarity: "epic", edition: "1/10", attack: 6, defense: 9, speed: 5, price: 2600, image: "images/ice2.png", description: "Impenetrable guardian of the frozen realm" },
+    { id: 7, name: "Thunder Dragon", faction: "lightning", type: "creature", rarity: "epic", edition: "1/10", attack: 8, defense: 5, speed: 9, price: 2700, image: "images/light2.jpg", description: "Soaring through storms with devastating power" },
+    { id: 8, name: "Inferno Beast", faction: "fire", type: "creature", rarity: "epic", edition: "1/10", attack: 10, defense: 5, speed: 5, price: 2900, image: "images/fire3.png", description: "Unleashed fury from the depths of hell" },
+    { id: 9, name: "Spark Mage", faction: "lightning", type: "creature", rarity: "rare", edition: "1/100", attack: 5, defense: 3, speed: 8, price: 800, image: "images/light3.png", description: "Master of electrical manipulation" },
+    { id: 10, name: "Flame Warrior", faction: "fire", type: "creature", rarity: "rare", edition: "1/100", attack: 6, defense: 4, speed: 5, price: 850, image: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=400&h=250&fit=crop", description: "Forged in the heart of volcanoes" },
+    { id: 11, name: "Frost Knight", faction: "ice", type: "creature", rarity: "rare", edition: "1/100", attack: 4, defense: 7, speed: 6, price: 820, image: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?w=400&h=250&fit=crop", description: "Noble protector of the frozen wastes" },
+    { id: 12, name: "Lightning Strike", faction: "lightning", type: "spell", rarity: "rare", edition: "1/100", attack: 0, defense: 0, speed: 0, price: 600, image: "https://images.unsplash.com/photo-1475274047050-1d0c0975c63e?w=400&h=250&fit=crop", description: "Deal 5 damage to any target" }
+];
 
-    function displaySlide(index){
-        slides.forEach(slide => slide.classList.remove('active'))
-        dots.forEach(dot => dot.classList.remove('active'))
+    const container = document.getElementById("show_container");
+    container.innerHTML = '';
+    let array=cards.slice(0,6)
+    console.log(array)
+    array.forEach(c => {
+        const card_elemnt = document.createElement('div');
+        card_elemnt.style.backfaceVisibility = 'hidden';
+        card_elemnt.classList.add('card_container')
+        card_elemnt.className = `market-card card-${c.faction}`;
+        card_elemnt.innerHTML = `
+            <div class="card-image" style="background-image: url('${c.image}');">
+                <div class="rarity ${c.rarity}">${c.edition}</div>
+            </div>
+            <div class="px-4 py-2 bg-[#0E0E22]">
+                <h3 class="text-2xl font-bold mb-2 text-${c.faction === "lightning" ? "purple" : c.faction === "fire" ? "orange" : "ciel"}">${c.name}</h3>
+                <p class="text-xs text-gray-500 mb-2">${c.rarity}</p>
+                <p class="text-xs text-gray-300 mb-6">${c.description}</p>
+                <div class="flex justify-between text-gray-400">
+                    <div><span>${c.price} 💎</span></div>
+                    <div><span>⚔️ ${c.attack}</span><span>🛡️ ${c.defense}</span><span>⚡ ${c.speed}</span></div>
+                </div>
+            </div>
+        `;
 
-        slides[index].classList.add('active')
-        dots[index].classList.add('active')
-    }
-    function slide(){
-        currentSlide = (currentSlide + 1) % slides.length
-        displaySlide(currentSlide)
-    }
-    setInterval(slide, 3000)
+        container.appendChild(card_elemnt);
+    });
+const btn_menu = document.querySelector('.menu-btn');
+const btn_menu_close = document.querySelector('.close-menu');
+const menuslider = document.querySelector('.menu_slider');
+const overlay = document.getElementById('overlay');
 
-    
+function openMenu() {
+    menuslider.classList.remove('translate-x-full');
+    menuslider.classList.add('translate-x-0');
+    overlay.classList.remove('hidden');
+}
 
+function closeMenu() {
+    menuslider.classList.remove('translate-x-0');
+    menuslider.classList.add('translate-x-full');
+    overlay.classList.add('hidden');
+}
+
+btn_menu.addEventListener('click', openMenu);
+btn_menu_close.addEventListener('click', closeMenu);
+overlay.addEventListener('click', closeMenu);
 </script>
-
 
 
 </body>
