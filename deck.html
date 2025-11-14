@@ -136,18 +136,15 @@
 const btn_menu = document.querySelector('.menu-btn');
 const btn_menu_close = document.querySelector('.close-menu');
 const menuslider = document.querySelector('.menu_slider');
-const overlay = document.getElementById('overlay');
 
 function openMenu() {
     menuslider.classList.remove('translate-x-full');
     menuslider.classList.add('translate-x-0');
-    overlay.classList.remove('hidden');
 }
 
 function closeMenu() {
     menuslider.classList.remove('translate-x-0');
     menuslider.classList.add('translate-x-full');
-    overlay.classList.add('hidden');
 }
 
 btn_menu.addEventListener('click', openMenu);

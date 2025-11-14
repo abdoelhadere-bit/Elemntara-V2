@@ -162,6 +162,9 @@ function favorite_card(id) {
     if (!favorite_cards.some(c => c.id === id)) {
         favorite_cards.push(card);
         localStorage.setItem('favorite_card', JSON.stringify(favorite_cards));
+        alert('Added to Favorite :)')
+    }else{
+        alert('Already Added !!')
     }
 }
 
